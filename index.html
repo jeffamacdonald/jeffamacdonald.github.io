@@ -46,6 +46,9 @@
   </style>
 </head>
 <body>
+  <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+  <h2 id="picksShownCount">0 Picks Shown</h2>
+  <h2 id="picksMadeCount">0 Picks Made</h2> 
   <img id="large-card" alt="placeholder" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=xxx&type=card">
   <h3 id="white">White</h3>
   <ul>
@@ -58,7 +61,7 @@
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Soldier%20of%20the%20Pantheon"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Soldier%20of%20the%20Pantheon&amp;set=&amp;type=card" alt="Soldier of the Pantheon"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Champion%20of%20the%20Parish"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Champion%20of%20the%20Parish&amp;set=&amp;type=card" alt="Champion of the Parish"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Dauntless%20Bodyguard"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Dauntless%20Bodyguard&amp;set=&amp;type=card" alt="Dauntless Bodyguard"></a></li>
-<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Swords%20to%20Plowshares"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Swords%20to%20Plowshares&amp;set=2E&amp;type=card" alt="Swords to Plowshears"></a></li>
+<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Swords%20to%20Plowshares"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Swords%20to%20Plowshares&amp;set=2E&amp;type=card" alt="Swords to Plowshares"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Path%20to%20Exile"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Path%20to%20Exile&amp;set=&amp;type=card" alt="Path to Exile"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Land%20Tax"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Land%20Tax&amp;set=LE&amp;type=card" alt="Land Tax"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Enlightened%20Tutor"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Enlightened%20Tutor&amp;set=&amp;type=card" alt="Enlightenend Tutor"></a></li>
@@ -162,14 +165,14 @@
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Impulse"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Impulse&amp;set=VI&amp;type=card" alt="Impulse"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Copy%20Artifact"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Copy%20Artifact&amp;set=&amp;type=card" alt="Copy Artifact"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Chart%20a%20Course"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Chart%20a%20Course&amp;set=&amp;type=card" alt="Chart a Course"></a></li>
-<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Vendilion%20Clique"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Vendilion%20Clique&amp;set=MOR&amp;type=card" alt="Vendillion Clique"></a></li>
+<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Vendilion%20Clique"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Vendilion%20Clique&amp;set=MOR&amp;type=card" alt="Vendilion Clique"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Man-o'-War"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Man-o'-War&amp;set=VI&amp;type=card" alt="Man-o'-War"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Deceiver%20Exarch"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Deceiver%20Exarch&amp;set=&amp;type=card" alt="Deceiver Exarch"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Champion%20of%20Wits"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Champion%20of%20Wits&amp;set=&amp;type=card" alt="Chamption of Wits"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Nimble%20Obstructionist"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Nimble%20Obstructionist&amp;set=&amp;type=card" alt="Nimble Obstructionist"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Master%20of%20Etherium"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Master%20of%20Etherium&amp;set=&amp;type=card" alt="Master of Etherium"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Jace's%20Archivist"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Jace's%20Archivist&amp;set=&amp;type=card" alt="Jace's Archivist"></a></li>
-<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Old%20Man%20of%20the%20Sea"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Old%20Man%20of%20the%20Sea&amp;set=&amp;type=card" alt="Old Man of the Sea"></a></li>
+<li data-checked="true"><a href="http://gatherer.wizards.com/Handlers/Image.ashx?name=Skaab%20Ruinator&amp;set=&amp;type=card"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=230780&amp;type=card" alt="Skaab Ruinator"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Tinker"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Tinker&amp;set=&amp;type=card" alt="Tinker"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Thirst%20for%20Knowledge"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Thirst%20for%20Knowledge&amp;set=&amp;type=card" alt="Thirst for Knowledge"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Frantic%20Search"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Frantic%20Search&amp;set=&amp;type=card" alt="Frantic Search"></a></li>
@@ -189,7 +192,7 @@
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Whirler%20Rogue"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Whirler%20Rogue&amp;set=&amp;type=card" alt="Whirler Rogue"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Reef%20Worm"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Reef%20Worm&amp;set=&amp;type=card" alt="Reef Worm"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Control%20Magic"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Control%20Magic&amp;set=2E&amp;type=card" alt="Control Magic"></a></li>
-<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Jace%2C%20the%20Mind%20Sculptor"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Jace%2C%20the%20Mind%20Sculptor&amp;set=&amp;type=card" alt="Jace the Mind Sculptor"></a></li>
+<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Jace%2C%20the%20Mind%20Sculptor"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Jace%2C%20the%20Mind%20Sculptor&amp;set=&amp;type=card" alt="Jace, the Mind Sculptor"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Fact%20or%20Fiction"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Fact%20or%20Fiction&amp;set=&amp;type=card" alt="Fact or Fiction"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Cryptic%20Command"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Cryptic%20Command&amp;set=LRW&amp;type=card" alt="Cryptic Command"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Opposition"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Opposition&amp;set=CG&amp;type=card" alt="Opposition"></a></li>
@@ -259,7 +262,7 @@
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Undercity%20Informer"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Undercity%20Informer&amp;set=&amp;type=card" alt="Undercity Informer"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Undead%20Gladiator"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Undead%20Gladiator&amp;set=ONS&amp;type=card" alt="Undead Gladiator"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Recurring%20Nightmare"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Recurring%20Nightmare&amp;set=&amp;type=card" alt="Recurring Nightmare"></a></li>
-<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Liliana%20of%20the%20Veil"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Liliana%20of%20the%20Veil&amp;set=&amp;type=card" alt="Lilana of the Veil"></a></li>
+<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Liliana%20of%20the%20Veil"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Liliana%20of%20the%20Veil&amp;set=&amp;type=card" alt="Liliana of the Veil"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Toxic%20Deluge"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Toxic%20Deluge&amp;set=&amp;type=card" alt="Toxic Deluge"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Necropotence"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Necropotence&amp;set=IA&amp;type=card" alt="Necropotence"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Hero's%20Downfall"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Hero's%20Downfall&amp;set=&amp;type=card" alt="Heros Downfall"></a></li>
@@ -570,9 +573,9 @@
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Figure%20of%20Destiny"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Figure%20of%20Destiny&amp;set=&amp;type=card" alt="Figure of Destiny"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Lightning%20Helix"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Lightning%20Helix&amp;set=&amp;type=card" alt="Lightning Helix"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Boros%20Charm"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Boros%20Charm&amp;set=&amp;type=card" alt="Boros Charm"></a></li>
-<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Boros%20Reckoner"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Boros%20Reckoner&amp;set=&amp;type=card" alt="Boros Reckoner"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Rally%20The%20Peasants"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Rally%20The%20Peasants&amp;set=&amp;type=card" alt="Rally The Peasants"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Kalemne%2C%20Disciple%20of%20Iroas"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Kalemne%2C%20Disciple%20of%20Iroas&amp;set=&amp;type=card" alt="Kalemne, Disciple of Iroas"></a></li>
+<li data-checked="true"><a href="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=420647&amp;type=card"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=420647&amp;type=card" alt="Bruse Tarl, Boorish Herder"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Ajani%20Vengeant"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Ajani%20Vengeant&amp;set=&amp;type=card" alt="Ajani Vengeant"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Assemble%20the%20Legion"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Assemble%20the%20Legion&amp;set=&amp;type=card" alt="Assemble the Legion"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Huatli%2C%20Warrior%20Poet"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Huatli%2C%20Warrior%20Poet&amp;set=&amp;type=card" alt="Hualti, Warrior Poet"></a></li>
@@ -696,7 +699,7 @@
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Scuttling%20Doom%20Engine"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Scuttling%20Doom%20Engine&amp;set=&amp;type=card" alt="Scuttling Doom Engine"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Triskelion"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Triskelion&amp;set=&amp;type=card" alt="Triskelion"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Myr%20Battlesphere"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Myr%20Battlesphere&amp;set=&amp;type=card" alt="Myr Battlesphere"></a></li>
-<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Karn%20Liberated"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Karn%20Liberated&amp;set=&amp;type=card" alt="Karn, Liberated"></a></li>
+<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Karn%20Liberated"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Karn%20Liberated&amp;set=&amp;type=card" alt="Karn Liberated"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=All%20is%20Dust"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=All%20is%20Dust&amp;set=&amp;type=card" alt="All is Dust"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Sundering%20Titan"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Sundering%20Titan&amp;set=DST&amp;type=card" alt="Sundering Titan"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Ulamog%2C%20the%20Ceaseless%20Hunger"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Ulamog%2C%20the%20Ceaseless%20Hunger&amp;set=&amp;type=card" alt="Ulamog, the Ceaseless Hunger"></a></li>
@@ -712,7 +715,7 @@
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Westvale%20Abbey"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Westvale%20Abbey&amp;set=&amp;type=card" alt="Westvale Abbey"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=The%20Tabernacle%20at%20Pendrell%20Vale"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=The%20Tabernacle%20at%20Pendrell%20Vale&amp;set=&amp;type=card" alt="The Tabernacle at Pendrell Vale"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Library%20of%20Alexandria"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Library%20of%20Alexandria&amp;set=AN&amp;type=card" alt="Library of Alexandria"></a></li>
-<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Strip%20Mine"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Strip%20Mine&amp;set=AQ&amp;type=card" alt="Stripmine"></a></li>
+<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Strip%20Mine"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Strip%20Mine&amp;set=AQ&amp;type=card" alt="Strip Mine"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Ancient%20Tomb"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Ancient%20Tomb&amp;set=&amp;type=card" alt="Ancient Tomb"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Wasteland"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Wasteland&amp;set=TE&amp;type=card" alt="Wasteland"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Bazaar%20of%20Baghdad"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Bazaar%20of%20Baghdad&amp;set=AN&amp;type=card" alt="Bazaar of Baghdad"></a></li>
@@ -796,5 +799,99 @@
       }, false);
     }());
   </script>
+  <script>
+  function makeApiCall() {
+      var params = {
+        // The ID of the spreadsheet to retrieve data from.
+        spreadsheetId: '1IqG9LYXatKMIuA3EwvBM6EIikKEJsRkGQs4BtJeisa0',  // TODO: Update placeholder value.
+
+        // The A1 notation of the values to retrieve.
+        range: 'B3:O38',  // TODO: Update placeholder value.
+
+        // How values should be represented in the output.
+        // The default render option is ValueRenderOption.FORMATTED_VALUE.
+        // valueRenderOption: '',  // TODO: Update placeholder value.
+
+        // How dates, times, and durations should be represented in the output.
+        // This is ignored if value_render_option is
+        // FORMATTED_VALUE.
+        // The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
+        // dateTimeRenderOption: '',  // TODO: Update placeholder value.
+      };
+
+      var request = gapi.client.sheets.spreadsheets.values.get(params);
+      request.then(function(response) {
+        // TODO: Change code below to process the `response` object:
+        console.log(response.result);
+        var picks = [].concat.apply([], response.result.values).map(pick => { return pick.toLowerCase().replace(/([ ,])+/g,'');}).filter(pick => pick.length);
+        var images = [].concat.apply([], document.querySelectorAll('img')),
+            imageNames = images.map(img => {return img.alt.toLowerCase().replace(/([ ,])+/g,'')}),
+            picksCount = 0;
+
+        for (var i = 0; i < picks.length; i++){
+          var index = imageNames.indexOf(picks[i]);
+          if(index !== -1){
+            images[index].style.opacity = 0.3;
+            picksCount += 1;
+          } else {
+            console.log(picks[i]);
+          }
+        }
+
+        document.getElementById('picksShownCount').innerHTML = picksCount + (picksCount === 1 ? ' Pick Shown' : ' Picks Shown');
+        document.getElementById('picksMadeCount').innerHTML = picks.length + (picks.length === 1 ? ' Pick Made' : ' Picks Made');
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+    }
+
+    function initClient() {
+      var API_KEY = 'AIzaSyCVCgoK-Fvm1acytY-9p-LO6TNHrt5yMfk';  // TODO: Update placeholder with desired API key.
+
+      var CLIENT_ID = '330260717727-2mqjg94ns5pb01g8fq2mi8fcoik0pu4q.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
+
+      // TODO: Authorize using one of the following scopes:
+      //   'https://www.googleapis.com/auth/drive'
+      //   'https://www.googleapis.com/auth/drive.file'
+      //   'https://www.googleapis.com/auth/drive.readonly'
+      //   'https://www.googleapis.com/auth/spreadsheets'
+      //   'https://www.googleapis.com/auth/spreadsheets.readonly'
+      var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+
+      gapi.client.init({
+        'apiKey': API_KEY,
+        'clientId': CLIENT_ID,
+        'scope': SCOPE,
+        'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+      }).then(function() {
+        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+        updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+      }, function(reason){
+        console.log(reason);
+      });
+    }
+
+    function handleClientLoad() {
+      gapi.load('client:auth2', initClient);
+    }
+
+    function updateSignInStatus(isSignedIn) {
+      if (isSignedIn) {
+        makeApiCall();
+      }
+    }
+
+    function handleSignInClick(event) {
+      gapi.auth2.getAuthInstance().signIn();
+    }
+
+    function handleSignOutClick(event) {
+      gapi.auth2.getAuthInstance().signOut();
+    }
+  </script>
+  <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  </script>  
 </body>
 </html>
