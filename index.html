@@ -43,13 +43,49 @@
       height: 310px;
       border-radius: 10px;
     }
+    #header{
+      margin:6px;
+      padding:6px;
+      color:grey;
+      background-color:black;
+      width:90%;
+      height: 25px;
+      border-radius: 10px;
+    }
+
+    #header h1{
+      display:inline;
+    }
+    #header ul {
+      display:inline;
+    }
+    #header li{
+      display:block;
+    }
+
+    #header button{
+      display:inline;
+      position: absolute;
+      left: 80%;
+      top: 17px;
+      font-size: 10px
+    }
+
+    .pushleft {
+      position:relative;
+      left: 40px;
+    }
   </style>
 </head>
 <body>
-  <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
-  <h2 id="picksShownCount">0 Picks Shown</h2>
-  <h2 id="picksMadeCount">0 Picks Made</h2> 
   <img id="large-card" alt="placeholder" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=xxx&type=card">
+  <div id = "header">    
+    <ul>
+      <li id="picksShownCount">0 Picks Shown</li>
+      <li class = "pushleft" id="picksMadeCount">0 Picks Made</li>
+    </ul>
+    <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+  </div>
   <h3 id="white">White</h3>
   <ul>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Karakas"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Karakas&amp;set=LE&amp;type=card" alt="Karakas"></a></li>
