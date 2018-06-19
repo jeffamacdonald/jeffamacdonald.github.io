@@ -265,7 +265,7 @@
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Liliana%20of%20the%20Veil"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Liliana%20of%20the%20Veil&amp;set=&amp;type=card" alt="Liliana of the Veil"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Toxic%20Deluge"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Toxic%20Deluge&amp;set=&amp;type=card" alt="Toxic Deluge"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Necropotence"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Necropotence&amp;set=IA&amp;type=card" alt="Necropotence"></a></li>
-<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Hero's%20Downfall"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Hero's%20Downfall&amp;set=&amp;type=card" alt="Heros Downfall"></a></li>
+<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Hero's%20Downfall"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Hero's%20Downfall&amp;set=&amp;type=card" alt="Hero's Downfall"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Contamination"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Contamination&amp;set=&amp;type=card" alt="Contamination"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Bitter%20Ordeal"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Bitter%20Ordeal&amp;set=&amp;type=card" alt="Bitter Ordeal"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Victimize"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Victimize&amp;set=UZ&amp;type=card" alt="Victimize"></a></li>
@@ -823,9 +823,9 @@
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log(response.result);
-        var picks = [].concat.apply([], response.result.values).map(pick => { return pick.toLowerCase().replace(/([ ,])+/g,'');}).filter(pick => pick.length);
+        var picks = [].concat.apply([], response.result.values).map(pick => { return pick.toLowerCase().replace(/([ ,-'/])+/g,'');}).filter(pick => pick.length);
         var images = [].concat.apply([], document.querySelectorAll('img')),
-            imageNames = images.map(img => {return img.alt.toLowerCase().replace(/([ ,])+/g,'')}),
+            imageNames = images.map(img => {return img.alt.toLowerCase().replace(/([ ,-'/])+/g,'')}),
             picksCount = 0;
 
         for (var i = 0; i < picks.length; i++){
