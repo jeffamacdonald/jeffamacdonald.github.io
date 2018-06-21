@@ -161,7 +161,7 @@
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Death%20or%20Glory"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Death%20or%20Glory&amp;set=&amp;type=card" alt="Death or Glory"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Righteous%20Confluence"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Righteous%20Confluence&amp;set=&amp;type=card" alt="Righteous Confluence"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Elspeth%2C%20Sun's%20Champion"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Elspeth%2C%20Sun's%20Champion&amp;set=&amp;type=card" alt="Elspeth Sun's Champion"></a></li>
-<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Akroma's%20Vengeance"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Akroma's%20Vengeance&amp;set=&amp;type=card" alt="Akroma's Vengance"></a></li>
+<li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Akroma's%20Vengeance"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Akroma's%20Vengeance&amp;set=&amp;type=card" alt="Akroma's Vengeance"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Elesh%20Norn%2C%20Grand%20Cenobite"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Elesh%20Norn%2C%20Grand%20Cenobite&amp;set=&amp;type=card" alt="Elesh Norn, Grand Cenobite"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Angel%20of%20Serenity"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Angel%20of%20Serenity&amp;set=&amp;type=card" alt="Angel of Serenity"></a></li>
 <li data-checked="true"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Entreat%20the%20Angels"><img id="card" src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Entreat%20the%20Angels&amp;set=&amp;type=card" alt="Entreat the Angels"></a></li>
@@ -859,9 +859,9 @@
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log(response.result);
-        var picks = [].concat.apply([], response.result.values).map(pick => { return pick.toLowerCase().replace(/([ ,])+/g,'');}).filter(pick => pick.length);
+        var picks = [].concat.apply([], response.result.values).map(pick => { return pick.toLowerCase().replace(/([ ,-/'])+/g,'');}).filter(pick => pick.length);
         var images = [].concat.apply([], document.querySelectorAll('img')),
-            imageNames = images.map(img => {return img.alt.toLowerCase().replace(/([ ,])+/g,'')}),
+            imageNames = images.map(img => {return img.alt.toLowerCase().replace(/([ ,-/'])+/g,'')}),
             picksCount = 0;
 
         for (var i = 0; i < picks.length; i++){
