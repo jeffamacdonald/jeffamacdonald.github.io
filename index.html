@@ -859,9 +859,9 @@
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log(response.result);
-        var picks = [].concat.apply([], response.result.values).map(pick => { return pick.toLowerCase().replace(/([ ,-/'])+/g,'');}).filter(pick => pick.length);
+        var picks = [].concat.apply([], response.result.values).map(pick => { return pick.toLowerCase().replace(/([ ,-/'’])+/g,'');}).filter(pick => pick.length);
         var images = [].concat.apply([], document.querySelectorAll('img')),
-            imageNames = images.map(img => {return img.alt.toLowerCase().replace(/([ ,-/'])+/g,'')}),
+            imageNames = images.map(img => {return img.alt.toLowerCase().replace(/([ ,-/'’])+/g,'')}),
             picksCount = 0;
 
         for (var i = 0; i < picks.length; i++){
