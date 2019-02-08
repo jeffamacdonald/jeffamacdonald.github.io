@@ -71,12 +71,10 @@
   cursor: pointer;
 }
 .hover-enlarge {
-  transition: width 0s, height 0s;
+  transition: all 1s;
 }
 .hover-enlarge:hover {
-  width: 80%;
-  height: 80%;
-  transition-delay: 1s;
+  transition: scale(2);
 }
 
 body {
