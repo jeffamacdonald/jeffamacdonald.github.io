@@ -75,6 +75,7 @@
 }
 .hover-enlarge:hover {
   transition: scale(2);
+  z-index: 1;
 }
 
 body {
