@@ -72,6 +72,7 @@
 }
 .hover-enlarge {
   transition: all 1s;
+  position: relative;
 }
 .hover-enlarge:hover {
   transition: scale(2);
