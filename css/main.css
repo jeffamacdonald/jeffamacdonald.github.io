@@ -89,6 +89,7 @@ body {
   padding: 0 32px 32px 32px;
   font-family: "Lucida Console", monospace;
   color: white;
+  text-shadow: 1px 0 0;
 }
 div {
   text-align: center;
